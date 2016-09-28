@@ -15,7 +15,7 @@
     @Styles.Render("~/Content/themes/easyui/custom")
     <style type="text/css">
         body {
-            letter-spacing: 1px;
+            /*letter-spacing: 1px;*/
             color: #444;
         }
 
@@ -92,10 +92,14 @@
     </script>
 </head>
 <body>
-    <div>
-        <div class="define-head" style="height: 67px;">
+    <div data-options="region:'north',border:false,split:false" style="height: 78px;background-image:url('@Url.Content("/images/top_bg.png")');background-repeat:repeat;">
+        <div style="float:left;background-image:url('@Url.Content("/images/logo.png")');height:78px;width:100%;background-repeat:no-repeat;" id="DIVLogo">
+        </div>
+        <div class="define-head">
             <div class="define-logo">
-                <div id="LoginTopLine">商砼管理系统</div>
+                <div id="LoginTopLine"></div>
+            </div>
+            <div class="define-account">
             </div>
         </div>
     </div>
@@ -173,8 +177,10 @@
         </table>
 
     </div>
-    <div style="background:#f1f1f1; height:40px; width:100%; text-align:center; line-height:40px;border-top:1px #ccc solid;bottom:0; position:absolute">
-        Copyright 2010-2016
+    <div data-options="region:'south',border:false" style="height: 20px;">
+        <div style="height:20px; width:100%;color:#c9d4f6; text-align:center; line-height:20px;border-top:1px #ccc solid;bottom:0; position:absolute;background-image:url('@Url.Content("/images/top_bg.png")');background-repeat:repeat-x;">
+            Copyright 2008-2016
+        </div>
     </div>
 </body>
 </html>

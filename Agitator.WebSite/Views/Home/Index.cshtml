@@ -11,9 +11,10 @@
     <title>商砼管理系统</title>
     <meta name="viewport" content="width=device-width" />
     @*@Styles.Render("~/Content/css")*@
-    @Styles.Render("~/Content/themes/gray/css")
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/easyui")
+    @Styles.Render("~/Content/themes/gray/css")
     @*@Scripts.Render("~/bundles/easyui/custom")*@
     <script>
         function OpenFrame(tabTitle, id) {
@@ -36,8 +37,8 @@
         <iframe width="726px" scrolling="no" height="497px" frameborder="0" id="iOverTimeLogin"></iframe>
     </div>
     
-    <div data-options="region:'north',border:false,split:false" style="height: 78px;background-image:url('/images/top_bg.png');background-repeat:repeat;">
-        <div style="float:left;background-image:url('/images/logo.png');height:78px;width:100%;background-repeat:no-repeat;" id="DIVLogo">
+    <div data-options="region:'north',border:false,split:false" style="height: 78px;background-image:url('@Url.Content("/images/top_bg.png")');background-repeat:repeat;">
+        <div style="float:left;background-image:url('@Url.Content("/images/logo.png")');height:78px;width:100%;background-repeat:no-repeat;" id="DIVLogo">
         </div>        
         <div class="define-head">
             <div class="define-logo">
@@ -76,12 +77,9 @@
             </div>
         </div>
     </div>
-    <div data-options="region:'south',border:false" style="height: 20px;">
-        @*<div class="define-bottom">
-            Copyright 2010-2016
-        </div>*@
-        <div style="height:20px; width:100%;color:#c9d4f6; text-align:center; line-height:20px;border-top:1px #ccc solid;bottom:0; position:absolute;background-image:url('/images/top_bg.png');background-repeat:repeat-x;">
-            Copyright 2010-2016
+    <div data-options="region:'south',border:false" style="height: 20px;">        
+        <div style="height:20px; width:100%;color:#c9d4f6; text-align:center; line-height:20px;border-top:1px #ccc solid;bottom:0; position:absolute;background-image:url('@Url.Content("/images/top_bg.png")');background-repeat:repeat-x;">
+            Copyright 2008-2016
         </div>
     </div>
     <div data-options="region:'center',border:false">

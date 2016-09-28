@@ -29,7 +29,7 @@ namespace Agitator.WebSite
 
             //EasyUI
             bundles.Add(new ScriptBundle("~/bundles/easyui").Include(
-                "~/Scripts/jquery.easyui-*"));
+                "~/Scripts/jquery.easyui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/easyui/custom").Include(
                 "~/Scripts/easyUI/EasyUI.js"));

@@ -413,18 +413,22 @@
     <Content Include="Content\themes\gray\images\combo_arrow.png" />
     <Content Include="Content\themes\gray\images\datagrid_icons.png" />
     <Content Include="Content\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Content\themes\gray\images\down.png" />
     <Content Include="Content\themes\gray\images\layout_arrows.png" />
+    <Content Include="Content\themes\gray\images\left.png" />
     <Content Include="Content\themes\gray\images\linkbutton_bg.png" />
     <Content Include="Content\themes\gray\images\loading.gif" />
     <Content Include="Content\themes\gray\images\menu_arrows.png" />
     <Content Include="Content\themes\gray\images\messager_icons.png" />
     <Content Include="Content\themes\gray\images\pagination_icons.png" />
     <Content Include="Content\themes\gray\images\panel_tools.png" />
+    <Content Include="Content\themes\gray\images\right.png" />
     <Content Include="Content\themes\gray\images\searchbox_button.png" />
     <Content Include="Content\themes\gray\images\slider_handle.png" />
     <Content Include="Content\themes\gray\images\spinner_arrows.png" />
     <Content Include="Content\themes\gray\images\tabs_icons.png" />
     <Content Include="Content\themes\gray\images\tree_icons.png" />
+    <Content Include="Content\themes\gray\images\up.png" />
     <Content Include="Content\themes\gray\images\validatebox_warning.png" />
     <Content Include="Content\themes\gray\layout.css" />
     <Content Include="Content\themes\gray\linkbutton.css" />
@@ -584,6 +588,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\close_btn.png" />
+    <Content Include="images\down.png" />
+    <Content Include="images\icon_1.png" />
+    <Content Include="images\icon_home.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\top_bg.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\themes\material\images\Thumbs.db" />
@@ -596,6 +606,7 @@
     <Content Include="Scripts\Contract\contract.main.js" />
     <Content Include="Areas\Contract\Views\Company\SyncUnitMain.cshtml" />
     <None Include="Properties\PublishProfiles\Agitator.pubxml" />
+    <None Include="Properties\PublishProfiles\AgitatorTeam.pubxml" />
     <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\easyloader.js" />
     <Content Include="Scripts\easyUI\datagrid-detailview.js" />
@@ -664,7 +675,6 @@
     <Folder Include="Areas\Contract\Views\Engineering\" />
     <Folder Include="Areas\Contract\Views\OrderContract\" />
     <Folder Include="Areas\Contract\Views\Shared\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -697,7 +707,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55367/</IISUrl>
+          <IISUrl>http://localhost:55469/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
