@@ -125,7 +125,17 @@ namespace Agitator.Business.Controllers.Contract
             {
                 //修改                
                 Entity.ResultEntity updateResult = _cServices.UpdateCompany(model);
-                ShowMessageHelper.ShowMessageBox("单位信息修改成功");
+                string msg = string.Empty;
+                if (updateResult.result == "1")
+                {
+                    msg = "单位信息修改成功";
+                }
+                else {
+                    msg = string.Format(@"保存失败，错误信息：{0}",updateResult.errmsg);
+                }
+                ShowMessageHelper.ShowMessageBox(msg);
+                LoadDropDownListData();
+                return View(model);
             }
             else
             {
@@ -153,15 +163,15 @@ namespace Agitator.Business.Controllers.Contract
                 {
                     model.id = addResult.id;
                     model.unitId = addResult.unitId;
-                    ShowMessageHelper.ShowMessageBox("单位信息创建成功");    
+                    ShowMessageHelper.ShowMessageBox("单位信息创建成功");
                 }
                 else
                 {
                     ShowMessageHelper.ShowMessageBox("服务器异常，请稍后再试");
                 }
+                LoadDropDownListData();
+                return RedirectToAction("Edit", "Company", new { area = "Contract", id = model.id });
             }
-            LoadDropDownListData();
-            return View(model);
         }
 
         /// <summary>
@@ -179,11 +189,13 @@ namespace Agitator.Business.Controllers.Contract
         /// <summary>
         /// 维护单位同步站点数据Action
         /// </summary>
+        /// <param name="id">单位主键ID</param>
         /// <returns></returns>
-        public ActionResult SyncUnitMain()
+        public ActionResult SyncUnitMain(string id)
         {
-            return View();
+            return View((object)id);
         }
+
         private void LoadDropDownListData()
         {
             CommonCompanyService commons = new CommonCompanyService();
@@ -227,6 +239,38 @@ namespace Agitator.Business.Controllers.Contract
                 unitId = id.ToInt()
             };
             var result = _cServices.GetSyncStationList(search);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 添加同步站点数据
+        /// </summary>
+        /// <param name="unitId">单位主键ID</param>
+        /// <param name="siteId">站点主键ID</param>
+        /// <param name="syncState">同步状态</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AddStationSync(string unitId, string siteId, string syncState)
+        {
+            SyncStationAdd entity = new SyncStationAdd()
+            {
+                unitId = unitId.ToInt(),
+                siteId = siteId.ToInt(),
+                syncState = syncState
+            };
+            Entity.AddResultEntity result = _cServices.AddStationSync(entity);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 删除同步站点数据
+        /// </summary>
+        /// <param name="id">单位同步数据主键ID</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult DeleteStationSync(string id)
+        {
+            var result = _cServices.DeleteStationSync(id);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }

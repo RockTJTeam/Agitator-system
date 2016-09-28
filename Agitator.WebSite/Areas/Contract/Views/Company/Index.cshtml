@@ -3,7 +3,6 @@
     var dataPageIndex = 1;
 
     function InitGrid(queryData) {
-        alert(1);
         $("#tabMain").datagrid({
             url: '@Url.Action("LoadCompanyList", "Company", new { area="Contract"})',
             title: '',
@@ -122,7 +121,6 @@
                 UnitName: $("#txtUnitName").val(),
                 linkman: $("#txtlinkman").val()
             };
-            alert(0);
             InitGrid(queryDataSearch);
             return false;
         });

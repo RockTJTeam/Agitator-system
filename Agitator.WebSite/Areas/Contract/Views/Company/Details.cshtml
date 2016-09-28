@@ -178,6 +178,11 @@
 
     </div>
     <div title="站点同步" closable="false" style="padding:10px;">
-        <table id="tabMain" class="easyui-datagrid" data-options="view:scrollview,pageSize:100" style="height:500px;width:100%;"></table>
+        <div id="tabSetup" style="padding:3px;">
+            <div style="margin-top:5px;">
+                <a id="btnGoBack" href="@Url.Action("Index", "Company", new { area="Contract"})" class="easyui-linkbutton easyui-linkbutton-cstype">返回</a>
+            </div>
+        </div>
+        <table id="tabMain" class="easyui-datagrid" data-options="view:scrollview,pageSize:100" style="height:500px;width:100%;" toolbar="#tabSetup"></table>
     </div>
 </div>

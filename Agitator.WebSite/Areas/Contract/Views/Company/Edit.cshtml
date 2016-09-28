@@ -3,6 +3,12 @@
 <script>
     $(function () {
         InitGrid();
+
+        $("#DIVSyncUnit").window({
+            onClose:function(){
+                InitGrid();
+            }
+        });
     });
     function FormSubmit() {
         $("#FormCompany").form('submit', {
@@ -41,6 +47,16 @@
             ]]
         });
     }
+
+    function OpenSyncUnitWindow(id) {        
+        if(id>0){
+            $('#DIVSyncUnit').window('open');
+            $("#iSyncUnitMain").attr("src", "@Url.Action("SyncUnitMain","Company",new { area = "Contract"})/" + @Model.id);
+        }else
+        {
+           jQuery.messager.alert("提示：","请先创建一条新的单位数据，再尝试点击此按钮设置同步站点");
+        }
+    }
 </script>
 <div class="easyui-tabs" style="width:100%;height:700px;">
     <div title="单位详情" style="padding:10px;">
@@ -77,7 +93,7 @@
                         <label>地址:</label>
                     </td>
                     <td>
-                        @Html.TextBoxFor(d => d.address, new { @class = "easyui-textbox", style = "width:100%;" })
+                        @Html.TextBoxFor(d => d.address, new { @class = "easyui-textbox easyui-validatebox", style = "width:100%;",required=true })
                     </td>
                 </tr>
                 <tr>
@@ -165,7 +181,7 @@
                 </tr>
             </table>
             <a id="btnEdit" href="#" onclick="FormSubmit();" class="easyui-linkbutton easyui-linkbutton-cstype">保存</a>
-                <a id="btnGoBack" href="@Url.Action("Index", "Company", new { area="Contract"})" class="easyui-linkbutton easyui-linkbutton-cstype">返回</a>
+            <a id="btnGoBack" href="@Url.Action("Index", "Company", new { area="Contract"})" class="easyui-linkbutton easyui-linkbutton-cstype">返回</a>
         }
     </div>
 
@@ -173,13 +189,14 @@
         <div class="page_subMarginTop"></div>
         <div id="tabSetup" style="padding:3px;">
             <div style="margin-top:5px;">
-                <a id="btnSearch" href="#" class="easyui-linkbutton easyui-linkbutton-cstype2" onclick="$('#w').window('open')">设置同步站点</a>
+                <a id="btnSearch" href="#" class="easyui-linkbutton easyui-linkbutton-cstype2" onclick="OpenSyncUnitWindow('@Model.id');">设置同步站点</a>                
+                <a id="btnGoBack" href="@Url.Action("Index", "Company", new { area="Contract"})" class="easyui-linkbutton easyui-linkbutton-cstype">返回</a>
             </div>
         </div>
         <table id="tabMain" class="easyui-datagrid" data-options="view:scrollview,pageSize:100" style="height:700px;width:100%;" toolbar="#tabSetup"></table>
     </div>
 </div>
 
-<div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:500px;height:200px;padding:10px;display:none;">
-    The window content.
+<div id="DIVSyncUnit" class="easyui-window" title="设置同步站点信息" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:735px;height:460px;padding:10px;display:none;">
+    <iframe style="width:100%;height:100%;" scrolling="no" frameborder="0" id="iSyncUnitMain"></iframe>
 </div>
