@@ -104,10 +104,10 @@
   background: url('images/layout_arrows.png') no-repeat -16px 0;
 }
 .layout-button-left {
-  background: url('images/left.png') no-repeat 0 0;
+  background: url('images/layout_arrows.png') no-repeat 0 0;
 }
 .layout-button-right {
-  background: url('images/right.png') no-repeat 0 0;
+  background: url('images/layout_arrows.png') no-repeat 0 -16px;
 }
 .layout-split-proxy-h,
 .layout-split-proxy-v {
@@ -126,8 +126,8 @@
   border-right: 5px solid #efefef;
 }
 .layout-expand {
-  background-color: #2b3c54;
+  background-color: #f3f3f3;
 }
 .layout-expand-over {
-  background-color: #263446;
+  background-color: #f3f3f3;
 }

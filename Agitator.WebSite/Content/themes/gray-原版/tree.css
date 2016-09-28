@@ -15,7 +15,6 @@
   height: 18px;
   white-space: nowrap;
   cursor: pointer;
-  border-left:2px solid #242d3d;
 }
 .tree-hit {
   cursor: pointer;
@@ -76,7 +75,7 @@
   background: url('images/tree_icons.png') no-repeat -224px 0;
 }
 .tree-file {
-  /*background: url('images/tree_icons.png') no-repeat -240px 0;*/
+  background: url('images/tree_icons.png') no-repeat -240px 0;
 }
 .tree-loading {
   background: url('images/loading.gif') no-repeat center center;
@@ -150,14 +149,12 @@
   border-color: #D3D3D3;
 }
 .tree-node-hover {
-  background: #263446;
-  color: #2494f2;
-  border-left:2px solid #2494f2;
+  background: #e2e2e2;
+  color: #000000;
 }
 .tree-node-selected {
-  background: #263446;
-  color: #2494f2;
-  border-left:2px solid #2494f2;
+  background: #0092DC;
+  color: #fff;
 }
 .tree-node-hidden {
   display: none;
