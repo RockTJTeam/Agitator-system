@@ -614,6 +614,7 @@
     <Folder Include="Areas\Contract\Views\Engineering\" />
     <Folder Include="Areas\Contract\Views\OrderContract\" />
     <Folder Include="Areas\Contract\Views\Shared\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -13,10 +13,10 @@ namespace Agitator.Business.Helper
         /// 弹出页面消息框
         /// </summary>
         /// <param name="msg"></param>
-        public static void ShowMessageBox(string msg)
+        public static void ShowMessageBox(string msg, string url = "")
         {
             msg = HttpUtility.HtmlDecode(msg);
-            HttpContext.Current.Response.Write("");
+            HttpContext.Current.Response.Write(MessageBox(msg, url));
         }
 
         public static string MessageBoxBackPage(string mess)
@@ -26,7 +26,7 @@ namespace Agitator.Business.Helper
 
         public static string MessageBox(string msg, string surl, string other = "")
         {
-            string mask = "<script language=\"JavaScript\" type=\"text/JavaScript\">var lurl = '{loca}';if('{message}'!='')jQuery.messager.alert('{message}');if(lurl.length > 1){ window.location = lurl;} {othop} </script>";
+            string mask = "<script>var lurl = '{loca}';if('{message}'!=''){alert('{message}');}if(lurl.length > 1){ window.location = lurl;} {othop} </script>";
 
             StringBuilder sb = new StringBuilder(mask);
 

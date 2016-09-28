@@ -125,7 +125,7 @@ namespace Agitator.Business.Controllers.Contract
             {
                 //修改                
                 Entity.ResultEntity updateResult = _cServices.UpdateCompany(model);
-                ShowMessageHelper.MessageBoxBackPage("单位信息修改成功");
+                ShowMessageHelper.ShowMessageBox("单位信息修改成功");
             }
             else
             {
@@ -153,11 +153,11 @@ namespace Agitator.Business.Controllers.Contract
                 {
                     model.id = addResult.id;
                     model.unitId = addResult.unitId;
-                    ShowMessageHelper.MessageBoxBackPage("单位信息创建成功");
+                    ShowMessageHelper.ShowMessageBox("单位信息创建成功");    
                 }
                 else
                 {
-                    ShowMessageHelper.MessageBoxBackPage("服务器异常，请稍后再试");
+                    ShowMessageHelper.ShowMessageBox("服务器异常，请稍后再试");
                 }
             }
             LoadDropDownListData();
