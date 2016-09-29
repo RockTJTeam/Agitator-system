@@ -165,8 +165,8 @@ namespace Agitator.Business.Services.ContractServices
         /// <summary>
         /// 修改已配置的单位站点同步的状态； 0：暂停，1：启用
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="state"></param>
+        /// <param name="id">单位同步配置的主键ID</param>
+        /// <param name="state">单位同步配置开关； 0：暂停，1：启用</param>
         /// <returns></returns>
         public ResultEntity SetStationSyncState(string id, string state)
         {

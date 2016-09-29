@@ -26,7 +26,7 @@ namespace Agitator.Business.Helper
 
         public static string MessageBox(string msg, string surl, string other = "")
         {
-            string mask = "<script>var lurl = '{loca}';if('{message}'!=''){ alert('{message}');}if(lurl.length > 1){ window.location = lurl;} {othop} </script>";
+            string mask = "<script>var lurl = '{loca}';if('{message}'!=''){ alert('{message}');}if(lurl.length > 1){ location.href = lurl;} {othop} </script>";
 
             StringBuilder sb = new StringBuilder(mask);
 

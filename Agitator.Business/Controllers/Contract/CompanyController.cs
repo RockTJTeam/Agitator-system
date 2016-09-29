@@ -130,8 +130,9 @@ namespace Agitator.Business.Controllers.Contract
                 {
                     msg = "单位信息修改成功";
                 }
-                else {
-                    msg = string.Format(@"保存失败，错误信息：{0}",updateResult.errmsg);
+                else
+                {
+                    msg = string.Format(@"保存失败，错误信息：{0}", updateResult.errmsg);
                 }
                 ShowMessageHelper.ShowMessageBox(msg);
                 LoadDropDownListData();
@@ -271,6 +272,19 @@ namespace Agitator.Business.Controllers.Contract
         public ActionResult DeleteStationSync(string id)
         {
             var result = _cServices.DeleteStationSync(id);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 设置单位到某个站点的同步配置的开关
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult SetStationSyncState(string id,string state)
+        {
+            var result = _cServices.SetStationSyncState(id, state);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
